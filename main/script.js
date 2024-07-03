@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const circle = document.querySelector(".input_fild .circle");
 
   let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-  let isInputChecked = false;
 
   function renderTasks(filter = "All") {
     tasksList.innerHTML = "";
@@ -62,10 +61,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function toggleTaskCompletion(index) {
+    const currentFilter = getActiveFilter();
     tasks[index].completed = !tasks[index].completed;
     saveTasks();
-    renderTasks(getActiveFilter());
-    updateTasksCount(getActiveFilter());
+    renderTasks(currentFilter);
+    updateTasksCount(currentFilter);
   }
 
   function deleteTask(index) {
@@ -79,7 +79,6 @@ document.addEventListener("DOMContentLoaded", () => {
     tasks.push({ text: taskText, completed: isChecked });
     saveTasks();
     renderTasks(getActiveFilter());
-    updateTasksCount(getActiveFilter());
   }
 
   function saveTasks() {
@@ -95,9 +94,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   inputTask.addEventListener("keypress", (event) => {
     if (event.key === "Enter" && inputTask.value.trim() !== "") {
-      addTask(inputTask.value.trim(), isInputChecked);
+      addTask(inputTask.value.trim(), false); // Ensure new tasks are not initially completed
       inputTask.value = "";
-      isInputChecked = false;
       circle.classList.remove("checked");
       checkIcon.classList.add("hidden");
     }
@@ -106,6 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
   tasksList.addEventListener("click", (event) => {
     const target = event.target;
     const taskElement = target.closest(".task");
+    if (!taskElement) return; // Exit early if not clicking on a task element
     const index = taskElement.dataset.index;
 
     if (
@@ -134,9 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   circleWrapper.addEventListener("click", () => {
-    isInputChecked = !isInputChecked;
-    circle.classList.toggle("checked");
-    checkIcon.classList.toggle("hidden");
+    // Implement your logic here for handling circleWrapper click if needed
   });
 
   sunIcon.addEventListener("click", () => {
