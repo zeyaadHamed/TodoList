@@ -1,0 +1,460 @@
+@charset "UTF-8";
+:root {
+  --body-color: #181824;
+  --list-bg: #25273c;
+  --header-color: #fffaff;
+  --font-color: #c4c6df;
+  --dele-font: #45475c;
+  --active-link: #4a7bca;
+  --hover-link: #dcdeed;
+  --color-link: #5b5c78;
+  --color-btn: #66bcf5;
+  --color-btnn: #a573ee;
+  --color-lightmod: #3b3a40;
+  --circle-bg: linear-gradient(#56befb, #a97cf1);
+  --light-link: #bdbec3;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.hidden {
+  display: none;
+}
+
+.task .task_li del {
+  color: var(--dele-font);
+}
+
+body {
+  background: var(--body-color);
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.container .background {
+  width: 100%;
+  height: 50vh;
+  background-image: url(/assets/images/bg-desktop-dark.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0px;
+}
+
+.container .container-todo {
+  z-index: 1;
+  width: 500px;
+  height: 500px;
+}
+
+.container .container-todo .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--header-color);
+  margin-bottom: 50px;
+}
+
+.container .container-todo .header h1 {
+  font-size: 40px;
+  text-transform: uppercase;
+  letter-spacing: 15px;
+}
+
+.container .container-todo .header span {
+  width: 50px;
+  cursor: pointer;
+}
+
+.container .container-todo .header span .moon, .container .container-todo .header span .sun {
+  width: 50px;
+  height: 50px;
+  fill: var(--header-color);
+}
+
+.container .container-todo .input_fild {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.container .container-todo .input_fild .input_task {
+  width: 100%;
+  padding: 20px;
+  padding-left: 50px;
+  background: var(--list-bg);
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  color: var(--font-color);
+  font-size: 29px;
+}
+
+.container .container-todo .input_fild .input_task::placeholder {
+  color: var(--font-color);
+}
+
+.container .container-todo .input_fild .circle-wrapper {
+  position: absolute;
+  left: 15px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.container .container-todo .input_fild .circle-wrapper .circle {
+  width: 100%;
+  height: 100%;
+  fill: var(--font-color);
+  border-radius: 50%;
+  background: transparent;
+}
+
+.container .container-todo .input_fild .circle-wrapper .circle.checked {
+  background: var(--circle-bg);
+}
+
+.container .container-todo .input_fild .circle-wrapper .check {
+  position: absolute;
+  width: 86%;
+  height: 83%;
+  fill: var(--font-color);
+  background: var(--circle-bg);
+  border-radius: 50%;
+}
+
+.container .container-todo .ul_tasks {
+  width: 100%;
+  height: 50%;
+  margin-top: 40px;
+}
+
+.container .container-todo .ul_tasks .tasks {
+  list-style: none;
+  width: 100%;
+  color: var(--font-color);
+  background-color: var(--list-bg);
+  border-radius: 10px;
+}
+
+.container .container-todo .ul_tasks .tasks .task {
+  font-size: 25px;
+  padding: 20px;
+  padding-left: 50px;
+  border-bottom: 1px solid var(--hover-link);
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container .container-todo .ul_tasks .tasks .task .circle-wrapper {
+  position: absolute;
+  left: 15px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.container .container-todo .ul_tasks .tasks .task .circle-wrapper .circle {
+  width: 100%;
+  height: 100%;
+  fill: var(--font-color);
+  border-radius: 50%;
+  background: transparent;
+}
+
+.container .container-todo .ul_tasks .tasks .task .circle-wrapper .circle.checked {
+  background: var(--circle-bg);
+}
+
+.container .container-todo .ul_tasks .tasks .task .circle-wrapper .check {
+  position: absolute;
+  width: 86%;
+  height: 83%;
+  fill: var(--font-color);
+  background: var(--circle-bg);
+  border-radius: 50%;
+}
+
+.container .container-todo .ul_tasks .tasks .task .task_li.checked {
+  text-decoration: line-through;
+  color: var(--dele-font);
+}
+
+.container .container-todo .ul_tasks .tasks .task .close {
+  width: 30px;
+  height: 30px;
+  fill: var(--dele-font);
+  cursor: pointer;
+}
+
+.container .container-todo .ul_tasks .settings {
+  margin-top: 10px;
+  height: 30%;
+  background-color: var(--list-bg);
+  color: var(--font-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 17px;
+}
+
+.container .container-todo .ul_tasks .settings .count {
+  display: flex;
+  align-items: center;
+}
+
+.container .container-todo .ul_tasks .settings .count span {
+  margin-right: 5px;
+}
+
+.container .container-todo .ul_tasks .settings .setting_ul {
+  display: flex;
+  list-style: none;
+}
+
+.container .container-todo .ul_tasks .settings .setting_ul li {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.container .container-todo .ul_tasks .settings .setting_ul li:hover {
+  color: var(--hover-link);
+}
+
+.container .container-todo .ul_tasks .settings .setting_ul li.active {
+  color: var(--active-link);
+}
+
+.container .container-todo .ul_tasks .settings .clear {
+  cursor: pointer;
+}
+
+.container .container-todo .ul_tasks .settings .clear span:hover {
+  color: var(--hover-link);
+}
+
+.light-theme {
+  --body-color: #fafafa;
+  --list-bg: #fff;
+  --header-color: #2d2e32;
+  --font-color: #9495a5;
+  --dele-font: #d1d2da;
+  --active-link: #4a7bca;
+  --hover-link: #9696a4;
+  --color-link: #73758b;
+  --color-btn: #4d7eab;
+  --color-btnn: #8d4dc8;
+  --circle-bg: linear-gradient(#56befb, #a97cf1);
+  --light-link: #bdbec3;
+}
+
+.light-theme .background {
+  background-image: url(/assets/images/bg-desktop-light.jpg);
+}
+
+.light-theme .container-todo .input_fild .input_task::placeholder {
+  color: var(--font-color);
+}
+
+.light-theme .container-todo .ul_tasks .tasks .task {
+  border-bottom: 1px solid var(--dele-font);
+}
+
+/* إضافة هذا الجزء لتثبيت لون العنوان الرئيسي */
+header {
+  color: white;
+}
+
+/* بقية الأكواد كما هي */
+body {
+  --body-color: #1e1f29;
+  --list-bg: #25273c;
+  --header-color: #fff;
+  /* اللون الأبيض للعناوين */
+  --font-color: #777a92;
+  --dele-font: #44465c;
+  --active-link: #3a7bfc;
+  --hover-link: #e3e4f1;
+  --color-link: #5b5e7e;
+  --color-btn: #4a7bca;
+  --color-btnn: #4d7eab;
+  --circle-bg: linear-gradient(#56befb, #a97cf1);
+  --light-link: #777a92;
+}
+
+body .background {
+  background-image: url(/assets/images/bg-desktop-dark.jpg);
+}
+
+body .container-todo .input_fild .input_task::placeholder {
+  color: var(--font-color);
+}
+
+body .container-todo .ul_tasks .tasks .task {
+  border-bottom: 1px solid var(--dele-font);
+}
+
+body .container-todo .ul_tasks .tasks .task .circle-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+body .container-todo .ul_tasks .tasks .task .circle-wrapper .circle {
+  width: 100%;
+  height: 100%;
+  fill: var(--font-color);
+  border-radius: 50%;
+  background: transparent;
+}
+
+body .container-todo .ul_tasks .tasks .task .circle-wrapper .circle.checked {
+  background: var(--circle-bg);
+}
+
+body .container-todo .ul_tasks .tasks .task .circle-wrapper .check {
+  position: absolute;
+  width: 86%;
+  height: 83%;
+  fill: var(--font-color);
+  background: var(--circle-bg);
+  border-radius: 50%;
+}
+
+body .container-todo .ul_tasks .tasks .task .task_li.checked {
+  text-decoration: line-through;
+  color: var(--dele-font);
+}
+
+body .container-todo .ul_tasks .tasks .task .close {
+  width: 20px;
+  height: 20px;
+  fill: var(--circle-bg);
+  cursor: pointer;
+}
+
+body .container-todo .ul_tasks .settings {
+  margin-top: 10px;
+  height: 30%;
+  background-color: var(--list-bg);
+  color: var(--font-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 17px;
+}
+
+body .container-todo .ul_tasks .settings .count {
+  display: flex;
+  align-items: center;
+}
+
+body .container-todo .ul_tasks .settings .count span {
+  margin-right: 5px;
+}
+
+body .container-todo .ul_tasks .settings .setting_ul {
+  display: flex;
+  list-style: none;
+}
+
+body .container-todo .ul_tasks .settings .setting_ul li {
+  margin-left: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+body .container-todo .ul_tasks .settings .setting_ul li:hover {
+  color: var(--hover-link);
+}
+
+body .container-todo .ul_tasks .settings .setting_ul li.active {
+  color: var(--active-link);
+}
+
+body .container-todo .ul_tasks .settings .clear {
+  cursor: pointer;
+}
+
+body .container-todo .ul_tasks .settings .clear span {
+  transition: 0.5s;
+}
+
+body .container-todo .ul_tasks .settings .clear span:hover {
+  color: var(--hover-link);
+}
+
+.light-theme {
+  --body-color: #fafafa;
+  --list-bg: #fff;
+  --header-color: #fff;
+  /* تثبيت اللون الأبيض للعناوين */
+  --font-color: #9495a5;
+  --dele-font: #d1d2da;
+  --active-link: #4a7bca;
+  --hover-link: #9696a4;
+  --color-link: #73758b;
+  --color-btn: #4d7eab;
+  --color-btnn: #8d4dc8;
+  --circle-bg: linear-gradient(#56befb, #a97cf1);
+  --light-link: #bdbec3;
+}
+
+.light-theme .background {
+  background-image: url(/assets/images/bg-desktop-light.jpg);
+}
+
+.light-theme .container-todo .input_fild .input_task::placeholder {
+  color: var(--font-color);
+}
+
+.light-theme .container-todo .ul_tasks .tasks .task {
+  border-bottom: 1px solid var(--dele-font);
+}
+
+@media (max-width: 767px) {
+  .container .container-todo .header {
+    margin: 0 15px 50px;
+  }
+  .container .container-todo .ul_tasks .settings {
+    position: relative;
+    margin: 0;
+  }
+  .container .container-todo .ul_tasks .settings .setting_ul {
+    position: absolute;
+    background: var(--list-bg);
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    top: 120px;
+  }
+}
