@@ -254,7 +254,7 @@ body {
     --circle-bg: linear-gradient(#56befb,#a97cf1);
     --light-link: #bdbec3;
     .background {
-        background-image: url(/assets/images/bg-desktop-light.jpg);
+        background-image: url('../assets/images/bg-desktop-light.jpg');
     }
     .container-todo {
         .input_fild {
@@ -279,7 +279,7 @@ header {
     color: white;
 }
 
-/* بقية الأكواد كما هي */
+
 body {
     --body-color: #1e1f29;
     --list-bg: #25273c;
@@ -294,7 +294,7 @@ body {
     --circle-bg: linear-gradient(#56befb,#a97cf1);
     --light-link: #777a92;
     .background {
-        background-image: url(/assets/images/bg-desktop-dark.jpg);
+        background-image: url('../assets/images/bg-desktop-dark.jpg');
     }
     .container-todo {
         .input_fild {
@@ -407,7 +407,7 @@ body {
     --circle-bg: linear-gradient(#56befb,#a97cf1);
     --light-link: #bdbec3;
     .background {
-        background-image: url(/assets/images/bg-desktop-light.jpg);
+        background-image: url('../assets/images/bg-desktop-light.jpg');
     }
     .container-todo {
         .input_fild {

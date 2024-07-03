@@ -272,7 +272,7 @@ body {
 }
 
 .light-theme .background {
-  background-image: url(/assets/images/bg-desktop-light.jpg);
+  background-image: url("../assets/images/bg-desktop-light.jpg");
 }
 
 .light-theme .container-todo .input_fild .input_task::placeholder {
@@ -288,7 +288,6 @@ header {
   color: white;
 }
 
-/* بقية الأكواد كما هي */
 body {
   --body-color: #1e1f29;
   --list-bg: #25273c;
@@ -306,7 +305,7 @@ body {
 }
 
 body .background {
-  background-image: url(/assets/images/bg-desktop-dark.jpg);
+  background-image: url("../assets/images/bg-desktop-dark.jpg");
 }
 
 body .container-todo .input_fild .input_task::placeholder {
@@ -427,7 +426,7 @@ body .container-todo .ul_tasks .settings .clear span:hover {
 }
 
 .light-theme .background {
-  background-image: url(/assets/images/bg-desktop-light.jpg);
+  background-image: url("../assets/images/bg-desktop-light.jpg");
 }
 
 .light-theme .container-todo .input_fild .input_task::placeholder {
